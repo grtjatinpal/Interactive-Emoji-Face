@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Emoji Face</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Additional custom styles for eyeball movement */
+        .eyeball {
+            background: radial-gradient(circle, #000 40%, #333 70%);
+            transition: transform 0.1s linear;
+        }
+
+        .nose {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .mouth {
+            bottom: 60px;
+            transform: translateY(10px);
+        }
+
+        .mouth-inner {
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cheek {
+            top: 60%;
+            transform: translateY(-50%);
+        }
+
+        .cheek.left {
+            left: -70px;
+        }
+
+        .cheek.right {
+            right: -70px;
+        }
+    </style>
+
+    <script src="script.js" defer></script>
+
+</head>
+
+<body class="bg-gradient-to-br from-pink-300 via-pink-200 to-pink-100 h-screen flex justify-center items-center">
+
+    <div
+        class="relative bg-yellow-200 w-[450px] h-[450px] rounded-full flex justify-center items-center border-8 border-yellow-600 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+
+        <!-- Left Eye -->
+        <div class="eye bg-white border-2 border-gray-300 w-24 h-24 rounded-full flex justify-center items-center mx-5">
+            <div class="eyeball w-9 h-9 rounded-full"></div>
+        </div>
+
+        <!-- Right Eye -->
+        <div class="eye bg-white border-2 border-gray-300 w-24 h-24 rounded-full flex justify-center items-center mx-5">
+            <div class="eyeball w-9 h-9 rounded-full"></div>
+        </div>
+
+        <!-- Nose -->
+        <div class="nose absolute w-5 h-5 bg-orange-500 rounded-full"></div>
+
+        <!-- Mouth -->
+        <div class="mouth absolute w-32 h-20 bg-red-500 rounded-full">
+            <div class="mouth-inner absolute w-28 h-14 bg-yellow-200 rounded-full"></div>
+        </div>
+
+        <!-- Cheeks -->
+        <div class="cheek left absolute w-12 h-12 bg-pink-300 rounded-full"></div>
+        <div class="cheek right absolute w-12 h-12 bg-pink-300 rounded-full"></div>
+    </div>
+
+</body>
+
+</html>
